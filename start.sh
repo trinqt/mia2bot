@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Khởi động Flask Server
-cd $HOME/botmia2
+cd $HOME/mia2bot
 nohup python web.py > /dev/null 2>&1 &
 
 # Khởi động Telegram Bot
-cd $HOME/botmia2
+cd $HOME/mia2bot
 nohup python bot.py > /dev/null 2>&1 &
 
 # Khởi động Cloudflare Tunnel
