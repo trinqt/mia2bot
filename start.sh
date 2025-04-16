@@ -1,12 +1,26 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 
-# Khởi động Flask Server
-cd $HOME/mia2bot
-nohup python web.py > /dev/null 2>&1 &
+echo "🔐 Bật SSH server..."
+sshd
 
-# Khởi động Telegram Bot
-cd $HOME/mia2bot
-nohup python bot.py > /dev/null 2>&1 &
+sleep 2
 
-# Khởi động Cloudflare Tunnel
-nohup cloudflared tunnel run mia2bot > /dev/null 2>&1 &
+# Lấy địa chỉ IP
+IP=$(curl -s ifconfig.me)
+USER_ID=$(id -u)
+MSG="IP hiện tại của bạn là:\n\nssh -p 8022 u0_a${USER_ID}@${IP}"
+
+# Gửi IP qua Telegram bot
+curl -s "https://api.telegram.org/bot7661043177:AAEL1xO9C1O4vMnr705gZvPPRMh5JN26VHk/sendMessage" \
+  -d "chat_id=5197540151" -d "text=$MSG"
+
+# Di chuyển vào thư mục bot
+cd ~/mia2bot || exit
+
+# Chạy bot telegram
+echo "🤖 Đang chạy bot telegram..."
+nohup python bot.py &
+
+# Chạy Cloudflare Tunnel
+echo "🌐 Đang khởi chạy Cloudflare Tunnel..."
+cloudflared tunnel run mia2bot
