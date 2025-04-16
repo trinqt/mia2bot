@@ -20,5 +20,5 @@ SSH_CMD="ssh -p $SSH_PORT $USERNAME@$DOMAIN"
 # Gửi về Telegram
 curl -s -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage \
   -d chat_id=$CHAT_ID \
-  -d text="🔐 SSH Termux Ready:\n\`\`\`\n$SSH_CMD\n\`\`\`" \
+  -d text="$SSH_CMD" \
   -d parse_mode=Markdown
