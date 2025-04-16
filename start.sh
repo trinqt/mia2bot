@@ -6,7 +6,7 @@ SSH_PORT=8022
 USERNAME="u0_a10161"
 DOMAIN="ssh.trinqt.top"
 TELEGRAM_BOT_TOKEN="7661043177:AAEL1xO9C1O4vMnr705gZvPPRMh5JN26VHk"
-CHAT_ID="7916172515"
+CHAT_ID="5197540151"
 
 # Chạy Cloudflare Tunnel (nền)
 nohup cloudflared tunnel run $TUNNEL_NAME > tunnel.log 2>&1 &
