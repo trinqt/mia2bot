@@ -4,8 +4,8 @@ import requests
 import socket
 
 # === CẤU HÌNH TELEGRAM ===
-BOT_TOKEN = 'YOUR_BOT_TOKEN'
-CHAT_ID = 'YOUR_CHAT_ID'
+BOT_TOKEN = '7661043177:AAEL1xO9C1O4vMnr705gZvPPRMh5JN26VHk'
+CHAT_ID = '5197540151'
 
 # === HÀM KIỂM TRA CỔNG ĐÃ MỞ ===
 def is_ssh_running(port=8022):
