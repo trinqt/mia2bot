@@ -45,7 +45,7 @@ for line in process.stdout:
 
 # === GỬI LINK QUA TELEGRAM ===
 if tunnel_link:
-    msg = f"ssh u0_a123@tunnel_link} -p 8022"
+    msg = f"ssh u0_a123@{tunnel_link} -p 8022"
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     data = {"chat_id": CHAT_ID, "text": msg}
     requests.post(url, data=data)
